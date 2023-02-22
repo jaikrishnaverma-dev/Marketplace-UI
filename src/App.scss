@@ -1,0 +1,496 @@
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: heldane;
+  src: url('../public/heldane/TestHeldaneText-Regular.otf');
+}
+
+@font-face {
+  font-family: heldanebold;
+  src: url('../public/heldane/TestHeldaneText-Bold.otf');
+}
+
+body {
+  background-color: #E5E5E5;
+}
+
+// container cover
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  background-color: white;
+}
+
+// default lists stype type desable
+li {
+  list-style-type: none;
+}
+
+// universal flex class to @extend 
+.d-flex {
+  display: flex;
+  align-items: center;
+}
+
+// universal class to make center x-axis y-axis 
+.xy-center {
+  @extend .d-flex;
+  justify-content: center;
+}
+
+//  headers design
+.header {
+  width: 100%;
+
+  // navbar desdign
+  .nav {
+    width: inherit;
+    padding: 33px 75px 0px 75px;
+    @extend .d-flex;
+    justify-content: space-between;
+
+    // right div in navbar
+    .right__nav {
+      @extend .d-flex;
+      justify-content: space-between;
+
+      // lists in right div
+      li {
+        @extend .xy-center;
+        width: 54px;
+        height: 54px;
+        border-radius: 50%;
+        margin: 0 10px;
+        border: none;
+      }
+
+      li:first-child {
+        background: #413DEE;
+      }
+    }
+
+    // links in navbar 
+    .links {
+      @extend .d-flex;
+
+      li {
+        margin: 0 20.5px;
+      }
+    }
+
+    // company logo
+    .logo {
+      font-family: Moderat;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 30px;
+      letter-spacing: 1em;
+      text-align: left;
+
+    }
+  }
+
+  // hero section design
+  .hero {
+    height: 600px;
+    width: inherit;
+    @extend .d-flex;
+    justify-content: space-between;
+    padding: 30px 0px 0px 75px;
+    overflow: hidden;
+
+    // hero section left div
+    .hero__left {
+      @extend .xy-center;
+
+      //design content of left section
+      .hero__box {
+        p:nth-child(1) {
+          margin: 0px;
+          font-family: unset;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 40px;
+          letter-spacing: 0em;
+          text-align: left;
+
+        }
+
+        p:nth-child(2) {
+          margin: 0px;
+          margin-top: 24px;
+          font-family: Heldanebold ;
+          font-size: 64px;
+          line-height: 80px;
+          letter-spacing: 0em;
+          text-align: left;
+
+        }
+
+
+      }
+
+    }
+
+    // right div of hero section
+    .hero__right {
+      height: 500px;
+      width: 578px;
+      @extend .xy-center;
+
+      .heroimage {
+        height: inherit;
+      }
+    }
+
+  }
+
+}
+
+.hero__buttons {
+  display: flex;
+  margin-top: 20px;
+
+  button {
+    width: 170px;
+    height: 60px;
+    border: 0px;
+    background-color: transparent;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .hero__explore {
+    background-color: #413DEE;
+    color: white;
+  }
+}
+
+// main div of page
+.main {
+  width: inherit;
+
+  .ourdeals {
+    background-color: #F8F8F8;
+    height: 100px;
+    width: inherit;
+    @extend .d-flex;
+    justify-content: space-between;
+    padding: 0 75px;
+  }
+
+  // card wrapper 
+  .cardgroup {
+    @extend .d-flex;
+    margin: 20px 75px 40px 75px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .card {
+      padding: 20px;
+      width: 30%;
+      min-width: 300px;
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.08);
+      border-radius: 20px;
+
+      .card__header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        div {
+          width: 51px;
+          height: 40px;
+          @extend .xy-center;
+        }
+
+        .card__offer {
+          background: rgba(235, 49, 49, 0.1);
+          border-radius: 5px;
+          color: red;
+
+          span {
+            font-size: 15px;
+          }
+        }
+
+        .card__like {
+          background-color: #403dee5d;
+          width: 40px;
+          border-radius: 50%;
+        }
+      }
+
+      .card__body {
+        margin-top: 20px;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .card__header--mid {
+        margin-top: 25px;
+
+        .card__devices {
+          width: 106px;
+          background: rgba(65, 61, 238, 0.1);
+          border-radius: 5px;
+
+          span {
+            font-family: unset;
+            color: #413DEE;
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 20px;
+            letter-spacing: 0em;
+            text-align: left;
+
+          }
+        }
+
+        .card__like {
+          background-color: transparent;
+          font-family: Heldane ;
+          font-size: 20px;
+          font-weight: 700;
+          line-height: 40px;
+          letter-spacing: 0em;
+          width: auto;
+          text-align: left;
+
+        }
+      }
+
+      .card__title {
+        font-family: Heldane ;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 32px;
+        letter-spacing: 0em;
+        text-align: left;
+
+      }
+
+      .card__buttons {
+        @extend .hero__buttons;
+
+      }
+    }
+  }
+}
+
+// input form box with message wrapper
+.formpad {
+  padding: 0 75px;
+  width: 100%;
+  margin-top: 60px;
+
+  .formpad__form {
+    @extend .xy-center;
+    flex-direction: column;
+    background-color: #413DEE;
+    display: flex;
+    justify-content: center;
+    height: 350px;
+    font-weight: 400;
+    border-radius: 20px;
+    color: white;
+
+    p:nth-child(1) {
+      font-family: Heldane;
+      font-size: 50px;
+      line-height: 70px;
+      letter-spacing: 0em;
+      text-align: center;
+      margin: 0;
+    }
+
+    p:nth-child(2) {
+      margin: 4px 0px 0px 0px;
+      font-family: DM Sans;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 30px;
+      letter-spacing: 0em;
+      text-align: center;
+
+    }
+
+    .inputdiv {
+      margin-top: 25px;
+      width: 520px;
+      height: 75px;
+      background: #FFFFFF;
+      border-radius: 100px;
+      @extend .xy-center;
+      justify-content: space-between;
+
+      .inputdiv__input {
+        border: none;
+        outline: none;
+        margin: 0 10px;
+        padding: 0 20px;
+        font-size: 20px;
+
+      }
+
+      .subscribe {
+        border-radius: 100px;
+        background-color: #413DEE;
+        border: none;
+        color: white;
+        height: 65px;
+        width: 150px;
+        margin: 4px;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+// footer section
+.footer {
+  margin-top: 75px;
+  padding: 60px 75px;
+  display: flex;
+  justify-content: space-between;
+
+  .footer__column {
+    margin-top: 0px;
+
+    li {
+      font-family: unset;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 32px;
+      letter-spacing: 0em;
+      margin-bottom: 10px;
+      text-align: left;
+      max-width: 240px;
+
+    }
+
+    li:nth-child(1) {
+      font-family: heldanebold;
+      font-size: 20px;
+      margin-bottom: 20px;
+
+      line-height: 26px;
+      letter-spacing: 0em;
+      text-align: left;
+
+    }
+
+    .footer__socialmedia {
+      @extend .d-flex;
+
+      .scial__icons {
+        @extend .xy-center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #403dee46;
+        margin-right: 20px;
+        color: #413DEE;
+
+        img {
+          height: 15px;
+        }
+      }
+    }
+  }
+}
+
+ul {
+  padding-inline-start: 0;
+}
+
+// media query for mobile vaid to 930px - 380px
+@media screen and (max-width: 930px) {
+  .main .cardgroup {
+    margin: 20px 75px 40px 75px;
+    flex-wrap: wrap;
+    justify-content: center !important;
+
+    .card {
+      min-width: 380px;
+      margin: 10px !important;
+
+    }
+  }
+
+  .header {
+    .hero {
+      padding: 30px 0px 0px 0px;
+      height: 800px;
+
+      .hero__left {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  .heroimage {
+    padding-top: 20px !important;
+  }
+
+  .hero {
+    flex-direction: column !important;
+  }
+
+  .nav,
+  .links {
+    flex-direction: column;
+  }
+
+  .links {
+    display: flex !important;
+    align-items: center !important;
+
+    li {
+      margin: 10px !important;
+    }
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer__column {
+    display: flex;
+    align-items: center;
+    flex-direction: column !important;
+  }
+
+  .formpad {
+    padding: 0px;
+    width: 95% !important;
+    margin: 0 auto;
+
+    .formpad__form {
+      padding: 10px;
+
+      p:nth-child(1) {
+        font-size: 23px !important;
+      }
+
+      p:nth-child(2) {
+        font-size: 15px !important;
+      }
+
+      .inputdiv {
+        width: 90% !important;
+        padding: 0px !important;
+
+        .inputdiv__input {
+          width: 80% !important;
+        }
+      }
+    }
+  }
+}
